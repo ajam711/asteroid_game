@@ -57,6 +57,14 @@ def main():
                 print("Game over!")
                 sys.exit()
 
+        for shot in shots:
+            for aster in asteroids:
+                if shot.collides_with(aster):
+                    log_event("asteroid_shot")
+                    aster.split()
+                    shot.kill()
+
+
         pygame.display.flip()
 
 
